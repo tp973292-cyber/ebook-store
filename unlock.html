@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unlock PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="unlock-box">
+  <h2>Please paste your transaction UPI ID for PDF</h2>
+  <input type="text" id="txn" placeholder="Enter UPI Transaction ID">
+  <br><br>
+  <button onclick="unlock()">OK</button>
+  <p id="error"></p>
+</div>
+
+<script>
+function unlock() {
+  var txn = document.getElementById("txn").value;
+  var error = document.getElementById("error");
+
+  if (txn.length < 8) {
+    error.innerText = "Invalid Transaction ID";
+  } else {
+    window.location.href = "success.html";
+  }
+}
+</script>
+
+</body>
+</html>
